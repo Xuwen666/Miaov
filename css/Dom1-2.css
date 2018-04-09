@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2018-04-08 16:30:19
+ * @version $Id$
+ */
+body,ul,li{
+	margin: 0;
+	padding: 0;
+}
+ul{
+	position: relative;
+	margin: 50px auto;
+	width: 350px;
+}
+.clear:after{
+	clear: both;
+	display: block;
+	content: '';
+}
+li{
+	position: relative;
+	list-style: none;
+	background-color: yellowgreen;
+	height: 60px;
+	line-height: 60px;
+	margin-bottom: 10px;
+	width: 350px;
+	top: 0;
+	left: 0;
+	
+}
+span{
+	margin-left: 20px;
+}
+em{
+	float: right;
+	margin-right: 30px;
+}
+.right{
+	float: right;
+	margin-right: 16px;
+}

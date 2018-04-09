@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>小球依次抖动下落</title>
+<style>
+img { width:100px; height:100px; position:absolute; border-radius:50%; }
+</style>
+
+
+</head>
+
+<body>
+
+<script src="js/miaov.js"></script>
+<script>
+var str = '';
+var n = 1;
+var arr = [ '9-img/01.jpg', '9-img/02.jpg', '9-img/03.jpg', '9-img/04.jpg', '9-img/05.jpg', '9-img/06.jpg' ];
+for (var i=0; i<4; i++) {
+	for (var j=0; j<8; j++) {
+		str += '<img style="top:'+ (20+i*110) +'px; left:' + (20+j*110) + 'px;" src="'+ arr[n%arr.length] +'" />';
+		n++;  /*注意这里的n值是1开始++的*/
+	}
+}
+
+			
+document.body.innerHTML = str;
+// 自动生成图片
+// 
+ 
+
+ /*整体大概的一个思路就是用数值存要掉落的顺序 */
+	
+var aImg = document.getElementsByTagName('img');
+// 找到所有的img
+for (var i=0; i<aImg.length; i++) {
+	aImg[i].index = i;   /*给每个img绑上自定义的数值*/
+	aImg[i].onclick = function () {
+		var arr = getArr( this.index );
+		console.log(arr)
+		var num = n = 0;
+		// 重置 num为0 并且设n为0
+		
+		var timer = setInterval(function() {
+			
+			// doMove( aImg[ arr[num] ], 'top', 22, target);
+			shake( aImg[ arr[num] ], 'left' , function() {
+				// alert( num );		// 注意，当第一个抖完以后，num这个数字已经不再是第0个了！！！
+				
+				var target = parseInt( getStyle( aImg[ arr[n] ], 'top' ) ) + 400;
+				doMove( aImg[ arr[n] ], 'top', 22, target);
+				
+				n++;
+			});
+			
+			num++;
+			if ( num == arr.length ) {
+				clearInterval( timer );
+			}
+		}, 50);
+		
+
+
+	};
+}
+function getArr( index ) {
+	// 传进来的index 是每个img的数值
+	var arr = [index];
+	var len = Math.max(index, aImg.length-1-index);  /*取第二个值*/
+	console.log(len)
+	var a = b = index;
+	for (var i=0; i<len; i++) {
+		if (a > 0) {
+			
+			arr.push(--a);  
+			/*我们知道了b=a++和b=++a的区别，不妨令a=5
+			前者是先赋值，再自加，即b=a;a=a+1； //结果b=5,a=6
+			后者是先自加，再赋值，即a=a+1;b=a;  //结果a=6,b=6*/
+			/*比如说我点击了第二张图片 那么数组会先存一个数值1 然后--a最后赋值为0*/
+		}
+		// 当你点击a为0的时候你是进不了a>0的这个判断的
+		if (b < aImg.length-1) {
+			arr.push(++b);
+		}
+
+
+		// 当你点击第0个的时候会push   ++b
+		
+		
+	}
+	
+	return arr;
+}
+</script>
+
+</body>
+</html>

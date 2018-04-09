@@ -1,0 +1,109 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2018-04-07 16:19:22
+ * @version $Id$
+ */
+body,p,ul,input,span,em{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style: none;
+}
+img{
+	border: none;
+	vertical-align: top;
+}
+.clear:after,.clear:before{
+	content: '';
+	display: table;
+}
+.clear:after{
+	clear: both;
+}
+.left{
+	float: left;
+}
+.list .right{
+	float: right;
+	display: none;
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	color: red;
+}
+/* .box start */
+.box{
+	background: url('../img/message-bg.jpg');
+	width: 700px;
+	height: 500px;
+	box-sizing: border-box;
+
+}
+.wrap{
+	margin: 100px auto 0;
+	width: 420px;
+}
+.list{
+	background-color: white;
+	border-radius:6px;
+	width: 420px;
+	padding: 10px;
+	min-height: 120px;
+	max-height: 240px;
+	box-sizing: border-box;
+	overflow: auto;
+}
+.list li{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	background-color: #ffcccc;
+	margin-bottom: 4px;
+	
+}
+.list p{
+	margin-left: 8px;
+}
+
+.list .right a,.list .right span{
+	font-size: 16px;
+}
+.btn{
+	margin: 12px 0 22px 0;
+	text-align: right;
+}
+.btn a{
+	display:inline-block;
+	width: 102px;
+	height: 44px;
+	background-color: #14afd0;
+	border: 1px solid white;
+	border-radius: 30px;
+	text-align: center;
+	line-height: 44px;
+	color: white;
+}
+.input{
+	width: 100%;
+	height: 40px;
+	background: url('../img/message-bg22.png') no-repeat 60px center;
+	height: 40px;
+
+}
+.input img{
+	padding-left: 10px;
+}
+.input input{
+	margin-left: 20px;
+	height: 40px;
+	width: 294px;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	color: white;
+}
