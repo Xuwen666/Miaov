@@ -1,79 +1,79 @@
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2018-03-23 21:37:34
+ * @version $Id$
+ */
 
-function doMove ( obj, attr, dir, target, endFn ) {
-	
-	dir = parseInt(getStyle( obj, attr )) < target ? dir : -dir;
-	
-	clearInterval( obj.timer );
-	
-	obj.timer = setInterval(function () {
-		
-		var speed = parseInt(getStyle( obj, attr )) + dir;
-		
-		if ( speed > target && dir > 0 ||  speed < target && dir < 0  ) {
-			speed = target;
-		}
-		
-		obj.style[attr] = speed + 'px';
-		
-		if ( speed == target ) {
-			clearInterval( obj.timer );
-			endFn && endFn();
-		}
-		
-	}, 30);
+
+// 封装获取计算机计算后样式
+
+function gestyle(obj,attr){
+	return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj)[attr];
 }
 
-function opacity(obj, num, target, endFn) {
-	
-		num = getStyle(obj, 'opacity')*100 < target ? num : -num;
-		
-		clearInterval( obj.opacity );
-		
-		obj.opacity = setInterval(function () {
-			
-			var speed = parseInt(getStyle(obj, 'opacity')*100) + num;
-			
-			if ( speed > target && num > 0 || speed < target && num < 0 ) {
-				speed = target;
-			}
-			
-			obj.style.opacity = speed/100;
-			obj.style.filter = 'alpha(opacity='+ speed +')';
-			
-			if ( speed == target ) {
-				clearInterval( obj.opacity );
-				endFn && endFn();
-			}
-
-		}, 20);
+// 封装动画滑动函数
+// 
+// 
+function doMove(obj,attr,dir, target, endFn){
+	dir=parseFloat(gestyle(obj,attr))<target?dir:-dir;
+	clearInterval(obj.timer);
+	obj.timer=setInterval(function(){
+		var speed=parseInt(gestyle(obj,attr))+dir;
+		if(speed>target&&dir>0||speed<target&&dir<0){
+			speed=target;
+		}
+		obj.style[attr]=speed+'px';
+		if(speed==target){
+			clearInterval(obj.timer);
+			endFn&&endFn();
+		}	
+	},30)
 }
 
-function shake ( obj, attr, endFn ) {
-	
-	if ( obj.onOff ) { return; }
-	obj.onOff = true;
-	
-	var pos = parseInt( getStyle(obj, attr) );			// 有隐患的
-	
-	var arr = [];
-	var num = 0;
-	var timer = null;
-		
-	for ( var i=20; i>0; i-=2 ) {
-		arr.push( i, -i );
+
+// 封装抖动函数
+function shake(obj,attr,endFn){
+
+	if(obj.shake){
+		return;
+	}
+	obj.shake=true;
+	var pos=parseFloat(gestyle(obj,attr));
+	var arr=[];
+	var len=20;
+	var num=0;
+	for(var i=len;i>0;i-=2){
+		arr.push(i,-i);
 	}
 	arr.push(0);
-		
-	clearInterval( obj.shake );
-	obj.shake = setInterval(function (){
-		obj.style[attr] = pos + arr[num] + 'px';
+	console.log(arr)
+	clearInterval(obj.shake)
+	obj.shake=setInterval(function(){
+		obj.style[attr]=pos+arr[num]+'px';
 		num++;
-		if ( num === arr.length ) {
-			clearInterval( obj.shake );
-			endFn && endFn();
-			obj.onOff = false;
+		if(num===len){
+			clearInterval(obj.shake);
+			endFn&&endFn();
+			obj.shake=false;
 		}
-	}, 50);
+	},50)
 }
 
-function getStyle ( obj, attr ) { return obj.currentStyle?obj.currentStyle[attr] : getComputedStyle( obj )[attr]; }
+// 封装透明度函数
+
+function opacity(obj,attr,dir,target,endFn){
+	dir=gestyle(obj,attr)*100<target?dir:-dir;
+	clearInterval(obj.opacity);
+	obj.opacity=setInterval(function(){
+		var speed=parseFloat(gestyle(obj,attr)*100)+dir;
+		if(speed>target&&dir>0||speed<target&&dir<0){
+			speed=target;
+		}
+		obj.style[attr]=speed/100;
+		if(speed==target){
+			clearInterval(obj.opacity);
+			endFn&&endFn();
+		}
+	},20)
+}

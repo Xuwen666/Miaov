@@ -1,0 +1,85 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2018-03-17 19:23:55
+ * @version $Id$
+ */
+body,ul,button{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style: none;
+}
+img{
+	vertical-align: top;
+	border: none;
+}
+.clear:after,.clear:before{
+	content: "";
+	display: table;
+}
+.clear:after{
+	clear: both;
+}
+
+/* box start */
+.box{
+	width: 400px;
+	margin: 50px auto;
+	border: 1px solid #eee;
+	font-size: 14px;
+}
+.box ul{
+	border: 1px solid #eee;
+}
+.box li{
+	cursor: pointer;
+	height: 30px;
+	line-height: 30px;
+}
+.box li span:first-of-type{
+	display: inline-block;
+	width: 260px;
+}
+
+.btn{
+	border-bottom: 1px solid black;
+	height: 35px;
+	line-height: 35px;
+}
+.left,.right{
+	float: left;
+}
+.left input,.left span,.right button{
+	vertical-align: middle;
+}
+
+.right{
+	margin-left: 100px;
+}
+.right button{
+	border: 1px solid #eee;
+	border-radius: 6px;
+	background-color: white;
+	height: 24px;
+	padding-left: 14px;
+	text-align: center;
+	cursor:pointer;
+	opacity: 0.3;
+	width: 60px;
+	background-repeat: no-repeat;
+	background-position: 2px 3px;
+}
+
+.shouc{
+	background-image: url('../img/favorite.gif');
+}
+.tianj{
+	background-image: url('../img/add.png');
+}
+.shanc{
+	background-image: url('../img/delete.png');
+}
+/* box end */

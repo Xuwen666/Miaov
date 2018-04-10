@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>图片轮播的两种方式</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	body,ul,p,button
+	{
+		margin: 0;
+		padding: 0;
+	}
+	img
+	{
+		vertical-align: top;
+		border: none;
+		width: 390px;
+		height: 470px;
+	}
+	a
+	{
+		text-decoration: none;
+	}
+	.box
+	{
+		margin: 40px auto;
+		width: 400px;
+		text-align: center;
+	}
+	button
+	{
+		background-color: green;
+		color: white;
+		text-align: center;
+		width: 100px;
+		height: 60px;
+		line-height: 60px;
+		border: none;
+		cursor: pointer;
+		margin-bottom: 10px;
+		outline: none;
+	}
+	button:hover
+	{
+		background-color: red;
+	}
+	.content
+	{
+		position: relative;
+		border: 5px solid black;
+	}
+	.content p
+	{
+		position: absolute;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.4);
+		text-align: center;
+		height: 40px;
+		line-height: 40px;
+		width: 100%;
+		color: white;
+	}
+	.content .text
+	{
+		top: 0;
+	}
+	.content .img
+	{
+		bottom: 0;
+	}
+	.content a
+	{
+		position: absolute;
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		text-align: center;
+		line-height: 40px;
+		color: white;
+		border:3px solid white;
+		top: 50%;
+		margin-top: -20px;
+
+	}
+	.prev
+	{
+		left: 10px;
+	}
+	.next
+	{
+		right: 10px;		
+	}
+
+	a:hover
+	{
+		background-color: red;
+	}
+</style>
+<script type="text/javascript" src="JS/0-2.js"></script>
+</head>
+<body>
+	<div class="box">
+		 <button>循环播放</button>
+  	  	 <button>顺序播放</button>
+  	  	 <div class="content">
+  	  	 	<img src="" alt="">
+  	  	 	<p class="text"></p>
+  	  	 	<p class="img"></p>
+  	  	 	<a href="javascript:;" class="prev"><</a>
+  	  	 	<a href="javscript:;" class="next">></a>
+
+  	  	 </div>
+	</div>
+   
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>选项卡交叉同步走</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	body,ul
+	{
+		margin: 0;
+		padding: 0;
+	}
+	li
+	{
+		list-style: none;
+	}
+	body
+	{
+		background-color: #eee;
+	}
+	.clearfix:after
+	{
+		display: block;
+		content: '';
+		clear: both;
+	}
+	.box
+	{
+		text-align: center;
+		width: 800px;
+		margin: 50px auto;
+	}
+	button
+	{
+		width:150px;
+		background-color: white;
+		border: 1px solid black;
+		color:gray;
+		box-shadow: 3px 3px 13px rgba(0,0,0,0.3);
+		padding: 20px;
+		font-size: 20px;
+		border: none;
+		cursor: pointer;
+	}
+	button.active
+	{
+		background-color: red;
+		color: white;
+	}
+
+	.content{
+		margin-top: 20px;
+		width: 800px;
+		box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.3);
+
+	}
+	.left,.right
+	{
+		width: 200px;
+		float: left;
+	}
+	.left li,.right li
+	{
+		height: 81px;
+		width: 100%;
+		line-height: 81px;
+		background-color: white;
+		margin-bottom: 2px;
+		cursor: pointer;
+	}
+	li.active
+	{
+		background-color: #667ca1;
+		color: white;
+	}
+	img
+	{
+		float: left;
+
+	}
+</style>
+<script type="text/javascript" src="JS/2-9.js"></script>
+</head>
+<body>
+    <div class="box">
+    	<button>下一张</button>
+    	<button class="active">交叉走</button>
+    	<button>同步走</button>
+    	<div class="content clearfix">
+    		<ul class="left">
+    			<li class="active">0</li>
+    			<li>1</li>
+    			<li>2</li>
+    		</ul>
+    		<img src="img/r1.jpg" alt="">
+    		<ul class="right">
+    			<li>3</li>
+    			<li>4</li>
+    			<li class="active">5</li>
+    		</ul>
+    	</div>
+    </div>
+</body>
+</html>

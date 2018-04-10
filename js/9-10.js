@@ -59,7 +59,7 @@ window.onload=function(){
 				console.log(odiv)
 				shake(odiv,'left',function(){
 					doMove(odiv,'top',20,280)
-					opacity(odiv,5,0,function(){
+					opacity(odiv,'opacity',5,0,function(){
 						// console.log(tbody)
 						tbody.innerHTML+='<td><div>'+text.innerHTML+'</div></td><td>'+jage.innerHTML+'</td><td><img src="'+oimg.src+'" alt=""></td></tr>';
 						console.log(zongjia.innerHTML)

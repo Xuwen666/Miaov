@@ -1,0 +1,132 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2018-03-11 09:38:44
+ * @version $Id$
+ */
+
+/* reset start */
+body,ul,img,button,input,p
+{
+	padding: 0;
+	margin: 0;
+}
+li
+{
+	list-style: none;
+}
+img
+{
+	vertical-align: top;
+	border: none;
+	width: 32px;
+	height: 28px;
+	border: 1px solid black;
+	border-radius: 10%;
+	padding: 2px;
+	vertical-align: middle;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+/* reset end */
+.Mobile
+{
+	width: 289px;
+	height: 594px;
+	background-image: url('../img/mobile.png');
+	margin: 40px auto;
+	position: relative;
+}
+.content
+{
+	position: absolute;
+	top: 88px;
+	left: 26px;
+	width: 237px;
+	height: 421px;
+	box-sizing: border-box;
+}
+.dialogue
+{
+	height: 380px;
+	overflow: auto;
+	padding: 5px 5px 0 5px;
+
+}
+.dialogue p
+{
+	
+	height: 32px;
+	line-height: 32px;
+	margin-bottom: 6px;
+}
+.dialogue .left
+{
+	text-align: left;
+}
+.dialogue .left span
+{
+	
+	margin-left: 6px;
+}
+.dialogue .right
+{
+	text-align: right;
+}
+.dialogue .right span
+{
+	background-color: #eee;
+	margin-right: 6px;
+
+
+}
+.dialogue span
+{
+	cursor: pointer;
+	border: 1px solid black;
+	border-radius: 10%;
+	background-color: green;
+	padding: 3px;
+	box-sizing: border-box;
+	height: 32px;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 24px;
+}
+.keyboard
+{
+	height: 36px;
+	border-top: 1px solid black;
+	box-sizing: border-box;
+	background-color: #eee;
+	padding: 0 5px 0 5px;
+	line-height: 30px;
+}
+.keyboard img
+{
+	vertical-align: middle;
+}
+.keyboard input
+{
+	vertical-align: middle;
+	width: 140px;
+	height: 20px;
+}
+.keyboard button
+{
+	background-color: greenyellow;
+	width: 40px;
+	border: none;
+	height: 24px;
+	line-height: 24px;
+	outline: none;
+	cursor: pointer;
+	border: 1px solid black;
+	border-radius: 10%;
+}
+.keyboard button:hover
+{
+	background-color: red;
+}

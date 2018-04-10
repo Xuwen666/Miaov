@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>点击加分效果 </title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	body,span{
+		margin: 0;
+		padding: 0;
+	}
+	.clear:after,.clear:before{
+		display: table;
+		content: '';
+	}
+	.clear:after{
+		clear: both;
+	}
+	.box{
+		margin: 400px auto 0;
+		border: 1px solid black;
+		width: 500px;
+		position: relative;
+		
+	}
+	span{
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		float: left;
+		cursor: pointer;
+		position: relative;
+		opacity: 1;
+
+	}
+	.bg{
+		width: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: yellowgreen;
+		height: 100%;
+	}
+</style>
+<script type="text/javascript" src="JS/miaov.js"></script>
+<script type="text/javascript" src="JS/9-3.js"></script>
+</head>
+<body>
+    <div class="box clear">
+		<div class="bg"></div>
+    </div>
+</body>
+</html>

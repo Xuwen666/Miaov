@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>自动轮换选项卡</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	body,ul{
+		margin: 0;
+		padding: 0;
+	}
+	li{
+		list-style: none;
+	}
+	img{
+		vertical-align: top;
+		border: none;
+
+	}
+	.clear:after,.clear:before{
+		display: table;
+		content: "";
+	}
+	.clear:after{
+		clear: both;
+	}
+
+	.box{
+		border: 1px solid black;
+		width: 300px;
+		margin: 50px auto;
+		padding: 10px;
+		font-size: 14px;
+	}
+	.nav{
+		height: 30px;
+	}
+	.nav li{
+		line-height: 30px;
+		width: 80px;
+		height: 30px;
+		background-color: #9FC;
+		float: left;
+		text-align: center;
+		margin-right: 1px;
+		cursor: pointer;
+	}
+	.nav li.active{
+		background-color: #066;
+		color: white;
+	}
+	.list{
+		width: 300px;
+		height: 90px;
+		padding-top: 4px;
+		display: none;
+	}
+	.list img{
+		width: 200px;
+		height: 89px;
+		float: left;
+	}
+	.list ul{
+		width: 100px;
+		float: right;
+	}
+	.list li{
+		width: 100%;
+		height: 29px;
+		line-height: 29px;
+		background-color: #f1f1f1;
+		text-indent: 20px;
+		margin-bottom: 1px;
+	}
+	.list li.active{
+		background-color: yellowgreen;
+		color: white;
+	}
+</style>
+<script type="text/javascript" src="JS/8-4.js"></script>
+</head>
+<body>
+    <div class="box">
+    	<ul class="nav clear">
+    		<li class="active">菜单一</li>
+    		<li>菜单二</li>
+    	</ul>
+    	<div class="one clear list" style="display: block;">
+    		<img src="img/6-5-1.jpg" alt="">
+    		<ul>
+    			<li class="active">图片一</li>
+    			<li>图片二</li>
+    			<li>图片三</li>
+    		</ul>
+    	</div>
+    	<div class="two clear list">
+    		<img src="img/6-5-2.jpg" alt="">
+    		<ul>
+    			<li >图片四</li>
+    			<li>图片五</li>
+    			<li>图片六</li>
+    		</ul>
+    	</div>
+    </div>
+</body>
+</html>

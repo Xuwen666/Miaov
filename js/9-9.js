@@ -6,7 +6,7 @@
  */
 
 window.onload=function(){
-
+	
 	var li=document.querySelectorAll('.time li');
 	var arrImg=['img/0.JPG','img/1.JPG','img/2.JPG','img/3.JPG','img/4.JPG','img/5.JPG','img/6.JPG','img/7.JPG','img/8.JPG','img/9.JPG'];
 	var num=0;
