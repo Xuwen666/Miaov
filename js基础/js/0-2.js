@@ -5,6 +5,21 @@
  * @version $Id$
  */
 
+/*
+	需求:默认是循环播放
+		 1.点击右边按钮图片下一张(当没有下一张的时候返回第一张),左边按钮图片上一张(当没有上一张的时候返回最后一张)
+		 2.点击顺序播放
+		 3.点击右边按钮图片一下张(当没有下一张的时候弹出提示框),左边按钮图片上一张(当没有上一张的时候弹出提示框)
+
+
+	解决方案: 设置一个开关为true 默认为true
+			  1.封装一个函数,设置一个变量num 随着num值的变换改变对应的图片等(图片等存入数组当中) 
+			  2开关设置为false
+			  3 判断当前的开关是true 还是false(只有当num>数组的长度-1的是才进行判断)   具体差异可看 59行  78行
+
+ */
+
+
 window.onload=function()
 {
 	var abtn=document.querySelectorAll('button');
@@ -39,21 +54,21 @@ window.onload=function()
 	next.onclick=function()
 	{
 		num++;
-		if(flg==true)
-		{
+	
+
 			if(num>arrImg.length-1)
 			{
-				num=0;
-			}
-		}
-		else
-		{
-			if(num>arrImg.length-1)
-			{
-				alert('最后一张了');
+				if(flg==true){
+					num=0;
+				}
+				else{
+					alert('最后一张了');
 				num=arrImg.length-1;
+				}
+				
 			}
-		}
+		
+	
 		picImg();
 	}
 

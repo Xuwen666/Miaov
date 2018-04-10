@@ -5,6 +5,11 @@
  * @version $Id$
  */
 
+/*
+	需求:
+
+
+ */
 window.onload=function()
 {
 	var dialogue=document.querySelector('.dialogue');

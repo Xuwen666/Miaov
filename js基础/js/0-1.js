@@ -5,6 +5,19 @@
  * @version $Id$
  */
 
+/*
+	需求:1.点击按钮的时候背景层显示出来(默认隐藏)
+		 2.点击弹出层的变化对应的颜色宽高
+		 3.点击恢复重置会一开始的样式
+		 4.点击确定隐藏背景层
+
+	解决方案: 1.获取元素设置style为block
+			  2.可封装背景颜色函数通过传入值的不同来改变div的颜色  封装宽度和高度函数 传入两个值第一个参数是宽或高 第二个参数是具体数字
+			  3.可使用csstext一条js写完所有div的属性
+			  4.设置block:none
+
+ */
+
 window.onload=function()
 {
 	var obtn=document.querySelector('.box input');

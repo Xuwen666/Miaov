@@ -25,7 +25,7 @@ window.onload=function(){
 		onoff=false;
 		clearInterval(timer);
 		timer=setInterval(function(){
-			domove(div[num],'top',10,flag==true?300:0,num==len-1?function(){
+			doMove(div[num],'top',10,flag==true?300:0,num==len-1?function(){
 				flag=!flag;
 				onoff=true;
 			}:null);
