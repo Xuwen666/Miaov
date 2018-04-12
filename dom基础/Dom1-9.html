@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>京东菜单</title>
+	<style>
+		ul{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+			color: #f50c3a;
+		}
+		.list{
+			height: 50px;
+			border-bottom: 1px solid #ffcccc;
+		}
+		.list span{
+			line-height: 50px;
+			float: left;
+		}
+		.list ul{
+			height: 50px;
+			margin-left: 150px;
+		}
+		.list li{
+			float: left;
+			line-height: 50px;
+			margin-right: 20px;
+		}
+		#select{
+			height: 40px;
+			padding: 5px 0;
+		}
+		#select li{
+			float: left;
+			line-height: 40px;
+			margin-right: 10px;
+		}
+		#select li div{
+			padding: 0 10px;
+			border: 1px solid #000;
+		}
+		#select strong{
+			color: #f50c3a;
+			padding-left: 10px;
+		}
+		#select a{
+			font-size: 22px;
+			padding-left: 10px;
+			padding-right: 5px;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="price" class="list">
+			<span>价格 :</span>
+			<ul>
+				<li><a href="javascript:;" >0-199</a></li>
+				<li><a href="javascript:;" >200-399</a></li>
+				<li><a href="javascript:;" >400-599</a></li>
+				<li><a href="javascript:;" >600-799</a></li>
+				<li><a href="javascript:;" >800以上</a></li>
+			</ul>
+		</div>
+		<div id="style" class="list">
+			<span>类别 :</span>
+			<ul>
+				<li><a href="javascript:;" >单肩包</a></li>
+				<li><a href="javascript:;" >手提包</a></li>
+				<li><a href="javascript:;" >双肩包</a></li>
+				<li><a href="javascript:;" >手拿包</a></li>
+				<li><a href="javascript:;" >斜挎包</a></li>
+			</ul>
+		</div>
+		<div id="price" class="list">
+			<span>品牌 :</span>
+			<ul>
+				<li><a href="javascript:;" >ONLY</a></li>
+				<li><a href="javascript:;" >艾格</a></li>
+				<li><a href="javascript:;" >稻草人</a></li>
+				<li><a href="javascript:;" >迪奥</a></li>
+				<li><a href="javascript:;" >宝姿</a></li>
+				<li><a href="javascript:;" >ELLE</a></li>
+			</ul>
+		</div>
+		<ul id="select">
+			<li>
+				<!-- <div>
+					<span>价格：</span>
+					<strong> 0-199 </strong>
+					<a href="javascript:;" > x </a>
+				</div> -->
+			</li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<script>  
+
+
+		/*
+			需求:点击a标签 出现对应的div 每一列a标签只能出现一个 并且按每行li的顺序
+			出现div的li直接在html中写死
+			
+			通过找到每个li 封装一个函数 传入每个li的dom元素以及数值
+			找到对应的a标签加点击事件 当前显示其他隐藏 设置一个变量存当前点击的adom元素 给下一次使用
+			获取到span的内容，创建一个div赋值,那么重点来了因为之前在html写死了三个li放div
+			所以只要通过传入li的数值找到,并且添加,每次添加之前要清空li里面的内容
+
+
+		 */
+		var list = document.getElementsByClassName('list');  
+		var sele = document.getElementById('select');
+		var aLi = sele.children;
+		for(var i=0;i<list.length;i++){
+			fn(list[i],i);
+		}
+		/* 不是获取所有的li 而是获取对应li下的a  添加的div在html当中直接写死 写三个li*/
+		function fn(obj,n){    
+			var a = obj.getElementsByTagName('a');     /// 找到list里面的a
+			console.log(a)
+			var old = a[0];
+			for(var i=0;i<a.length;i++){
+				a[i].onclick = function (){               
+					/*如果第一个点击的是0*/                                
+					old.parentNode.style.display = 'block';   // 旧的old显示
+					this.parentNode.style.display = 'none';   //  再把当前a的li 消失none
+					old = this;
+
+					var span = this.parentNode.parentNode.previousElementSibling;  // a的父级li的父级ul的上一个兄弟span
+					var newDiv = document.createElement('div');
+					newDiv.innerHTML = '<span>'+ span.innerHTML +'</span><strong>'+ this.innerHTML +'</strong><a href="javascript:;"> x </a>';
+					aLi[n].innerHTML = '';            
+					aLi[n].appendChild(newDiv);           //  先清空li里面的内容,再把div放进去
+
+					//// 获取select里面所有的a点击x
+					var xx = aLi[n].getElementsByTagName('a')[0];    
+					console.log(xx);                      
+					xx.onclick = function (){  
+						old.parentNode.style.display = 'block';   /*这里的old因为之前点击的时候存过*/
+						this.parentNode.parentNode.innerHTML = '';
+					};
+				};
+			}
+					
+					
+		}
+
+
+
+	</script>
+</body>
+</html>
