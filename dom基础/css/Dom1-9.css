@@ -1,0 +1,90 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2018-04-14 11:33:33
+ * @version $Id$
+ */
+
+
+/* 
+	行高是会被内链元素继承的
+
+ */
+/* reset start */
+body,ul,li{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style: none;
+}
+em{
+	font-style: normal;
+}
+a{
+	text-decoration: none;
+	color: #f50c3a;
+}
+.clear:after,.clear:before{
+	content: "";
+	display: table;
+}
+.clear:after{
+	clear: both;
+}
+/* reset end */
+
+/* box  start */
+.box{
+	margin-left: 10px;
+}
+.list{
+	border-bottom:1px solid  #ffcccc;
+	height: 50px;
+	line-height: 50px;
+}
+.list ul{
+	margin-left: 110px;
+
+
+}
+.list span{
+	float: left;
+}
+.list li{
+	float: left;
+	margin-right: 20px;
+}
+
+#select{
+	margin-top: 6px;
+}
+#select div{
+	border: 1px solid black;
+	height: 42px;
+	line-height: 42px;
+
+	font-size: 0;
+	margin-right: 10px;
+	float: left;
+
+}
+#select li span{
+	padding-left: 10px;
+	font-size: 16px;
+
+}
+#select li em{
+	color: #f50c3a;
+	padding-left: 10px;
+	font-size: 16px;
+	font-weight: bold;
+}	
+#select li a{
+	padding-left: 18px;
+	padding-right: 10px;
+	font-size: 16px;
+	font-weight: bold;
+}
+/* box end */
