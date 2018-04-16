@@ -1,0 +1,365 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2018-04-16 13:58:34
+ * @version $Id$
+ */
+/* reset start */
+body,ul,li,p,h2,button,input{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style: none;
+}
+img{
+	vertical-align: top;
+	border: none;
+}
+a{
+	text-decoration: none;
+
+}
+body,html{
+	width: 100%;
+	height: 100%;
+	background: url('../img/bg1.jpg') no-repeat;
+	background-size: 100% 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	font-family: "宋体";
+}
+.clear:after,.clear:before{
+	content: "";
+	display: table;
+}
+.clear:after{
+	clear: both;
+}
+.fl{
+	float: left;
+}
+.rl{
+	float: right;
+}
+button{
+	border: none;
+	background-color: white;
+	border: 1px solid #d1d9df;
+}
+/* reset end */
+
+
+/* email start */
+#email{
+	width: 950px;
+	height: 524px;
+	background-color: white;
+}
+.left{
+	 width: 165px;
+	height: 524px;
+	background-color: #112435;
+}
+.left .header{
+	background-color: #e15671;
+	line-height: 60px;
+	height: 60px;
+	font-size: 12px;
+	color: white;
+	display: flex;
+	align-items: center;
+}
+.left .header a{
+	color: white;
+	padding-left: 3px;
+	
+}
+.left .list1{
+	background-color: #112435;
+	padding: 10px 0;
+}
+.left .list1 li{
+	
+	position: relative;
+	text-indent: 46px;
+	line-height: 40px;
+	height: 40px;
+}
+.left .list1 li:after{
+	content: "";
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	left: 24px;
+
+}
+.left .list1 a{
+	font-size: 16px;
+	color: white;
+	
+
+}
+.left .list1 .write:after{
+	background-image: url('../img/list-1.png');
+	height: 16px;
+	top: 12px;
+}
+.left .list1 .receiving:after{
+	background-image: url('../img/list-2.png');
+	height: 15px;
+	top: 12px;
+}
+.left .list1 .address:after{
+	background-image: url('../img/list-3.png');
+	height: 15px;
+	top: 12px;
+}
+
+.list2{
+	background-color: #112435;
+}
+.list2 li{
+	height: 40px;
+	line-height: 40px;
+	text-indent: 48px;
+	position: relative;
+}
+.list2 li.active{
+	background-color: #0f202f;
+	border-left: 4px solid #e15671;
+	border-top: 1px solid #030c13;
+}
+.list2 li.active a{
+	color: #e15671;
+
+}
+.list2 li a{
+	font-size: 14px;
+	color: #8f979f;
+}
+.list2 li:after{
+	content: "";
+	position: absolute;
+	left: 24px;
+	
+}
+.list2 .inbox:after{
+	background-image: url('../img/list-4.png');
+	top: 16px;
+	width: 15px;
+	height: 11px;
+}
+.list2 .StarMail:after{
+	background-image: url('../img/list-5.png');
+	top: 13px;
+	width: 15px;
+	height: 15px;
+}
+.list2 .groupMail:after{
+	background-image: url('../img/list-6.png');
+	top: 13px;
+	width: 15px;
+	height: 13px;
+}
+.list2 .drafts:after{
+	background-image: url('../img/list-7.png');
+	top: 13px;
+	width: 15px;
+	height: 15px;
+}
+.list2 .Sent:after{
+	background-image: url('../img/list-8.png');
+	top: 13px;
+	width: 15px;
+	height: 15px;
+}
+.list2 .del:after{
+	background-image: url('../img/list-9.png');
+	top: 13px;
+	width: 15px;
+	height: 15px;
+}
+.list2 .bin:after{
+	background-image: url('../img/list-10.png');
+	top: 13px;
+	width: 15px;
+	height: 15px;
+}
+.list2 .hover{
+	background-color: #0f202f;
+}
+.list2 .hover a{
+	color: #e15671;
+}
+.list2 .del span,.list2 .bin span{
+	color: #8f979f;
+	font-size: 14px;
+	margin-left: 27px;
+}
+
+.right{
+	width: 785px;
+}
+.right .header{
+	background-color: #e5ecf2;
+	height: 60px;
+	line-height: 60px;
+	font-size: 0px;
+	display: flex;
+	align-items: center;
+}
+.right .header a{
+	color: #505051;
+	margin-left: 20px;
+	margin-right: 16px;
+	font-size: 16px;
+}
+.right .header a:first-of-type{
+	margin-left: 34px;
+}
+.right .header span{
+	font-size: 16px;
+}
+.right .header img[src*="1"]{
+	margin-left: 30px;
+	margin-right: 20px;
+}
+.title{
+	color: #585858;
+	
+	height: 48px;
+	line-height: 48px;
+}
+.title h2{
+	font-size: 17px;
+	text-indent: 24px;
+}
+.title span{
+	color: #46accd;
+	cursor: pointer;
+}
+.right .menu{
+	height: 40px;
+	line-height: 40px;
+	background-color: #f2f5f8;
+	padding-left: 28px;
+}
+.right .menu button{
+	height: 22px;
+	line-height: 22px;
+	font-size: 14px;
+	color: #242424;
+	border-radius: 2px;
+	position: relative;
+
+}
+.right .menu button:nth-of-type(1){
+	padding-left: 18px;
+	padding-right: 19px;
+}
+.right .menu .active{
+	background-color: #6cb9d4;
+	border: 1px solid #6cb9d4;
+	color: white;
+}
+.right .menu button:nth-of-type(2){
+	padding-left: 13px;
+	padding-right: 14px;
+}
+.right .menu button:nth-of-type(3){
+	padding-left: 17px;
+	padding-right: 18px;
+}
+.right .menu button:nth-of-type(4){
+	padding-left: 17px;
+	padding-right: 19px;
+}
+.right .menu button:nth-of-type(5){
+	padding-left: 13px;
+	padding-right: 14px;
+}
+.right .menu button:nth-of-type(6){
+	padding-left: 13px;
+	padding-right: 33px;
+}
+.right .menu button:nth-of-type(7){
+	padding-left: 13px;
+	padding-right: 33px;
+}
+.right .menu .sign:after{
+	content: "";
+	position: absolute;
+	background: url('../img/emailHead.png') no-repeat;
+	width: 11px;
+	height: 6px;
+	right: 9px;
+	top: 8px;
+}
+.right .menu .appen:after{
+	content: "";
+	position: absolute;
+	background: url('../img/emailHead.png') no-repeat;
+	width: 11px;
+	height: 6px;
+	right: 9px;
+	top: 8px;
+}
+
+.emailList .emailHead{
+	height: 45px;
+	box-sizing: border-box;
+	padding-top: 11px;
+	border-bottom: 1px solid #e0e9f0;
+	padding-left: 18px;
+	font-size: 0;
+}
+.emailList .emailHead input{
+	width: 16px;
+	height: 16px;
+}
+.emailList .emailHead img:nth-of-type(1){
+	margin-left: 18px;
+}
+.emailList .emailHead img:nth-of-type(2){
+	margin-left: 10px;
+}
+.emailList .list li{
+	position: relative;
+	height: 65px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #e0e9f0;
+}
+.emailList .list li input{
+	position: absolute;
+	top: 14px;
+	left: 20px;
+	width: 16px;
+	height: 16px;
+}
+.emailList .list li{
+	padding-left: 46px;
+	padding-top: 9px;
+	padding-right: 20px;
+}
+.emailList .list li .text span:nth-of-type(1){
+	color: #6f6f6f;
+	font-size: 14px;
+	line-height: 24px;
+	height: 24px;
+}
+.emailList .list li .text span:nth-of-type(2){
+	color: #b4b4b4;
+	font-size: 12px;	
+	line-height: 24px;
+	height: 24px;
+}
+.emailList .list li p{
+	font-size: 14px;
+	line-height: 22px;
+	color: #a6a6a6;
+}
+/* email end */

@@ -6,20 +6,99 @@
 <title>Examples</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
-<link href="" rel="stylesheet">
+<link href="css/Dom1-11.css" rel="stylesheet">
+<script type="text/javascript" src="js/data.js"></script>
 <script type="text/javascript" src="js/Dom1-11.js"></script>
-<style type="text/css">
-.blue{background-color: blue}
-	a~div{background-color: red;}
 
-
-</style>
 </head>
 <body>
-    <a href="">ces</a>
-    <div>
-    	111
-    	<div class="blue">222</div>
+    <div id="email" class="clear">
+    	<div class="left fl">
+    		<div class="header">
+    			<img src="img/logo-2.png" alt="">
+    			|
+    			<a href="javascript:;">邮箱</a>
+    		</div>
+    		<ul class="list1">
+    			<li class="write">
+    				<a href="javascript:;">写信</a>
+    			</li>
+    			<li class="receiving">
+    				<a href="javascript:;">收信</a>
+    			</li>
+    			<li class="address">
+    				<a href="javascript:;">通讯录</a>
+    			</li>
+    		</ul>
+    		<ul class="list2">
+    			<li class="active inbox">
+    				<a href="javascript:;">收件箱</a>
+
+    			</li>
+    			<li class="StarMail">
+    				<a href="javascript:;">星标邮件</a>
+    			</li>
+    			<li class="groupMail">
+    				<a href="javascript:;">群邮件</a>
+    			</li>
+    			<li class="drafts">
+    				<a href="javascript:;">草稿箱</a>
+    			</li>
+    			<li class="Sent">
+    				<a href="javascript:;">已发送</a>
+    			</li>
+    			<li class="del hover">
+    				<a href="javascript:;">已删除</a>
+    				<span>清空</span>
+    			</li>
+    			<li class="bin">
+    				<a href="javascript:;">垃圾箱</a>
+    				<span>清空</span>
+    			</li>
+    		</ul>
+    	</div>
+
+    	<div class="right fl">
+    		<div class="header">
+    			<a href="javascript:;">邮箱首页</a>
+    			<span>|</span>
+    			<a href="javascript:;">设置</a>
+    			<img src="img/hint1.jpg">
+    			<img src="img/hint2.jpg" alt="">
+
+    		</div>
+    		<div class="title">
+    			<h2>收件箱(共96封,其中<span>未读邮件</span>9封)</h2>
+    		</div>
+    		<div class="menu">
+    			<button class="active">删除</button>
+    			<button>彻底删除</button>
+    			<button>转发</button>
+    			<button>举报</button>
+    			<button>全部标为已读</button>
+    			<button class="sign">标记为...</button>
+    			<button class="appen">移动到...</button>
+    		</div>
+    		<div class="emailList">
+    			<header class="emailHead">
+    				<input type="checkbox" name="">
+    				<img src="img/emailHead1.png" alt="">
+    				<img src="img/emailHead2.png" alt="">
+    			</header>
+    			<ul class="list">
+    				<li>
+    					<input type="checkbox" name="">
+    					<div class="text clear">
+    						<span class="fl">添加邮件</span>
+    						<span class="rl">2018-4-16</span>
+    					</div>
+    					<p>WebAssembly.Studio is an online IDE</p>
+    				</li>
+    				
+    			</ul>
+    		</div>
+    	</div>
     </div>
 </body>
 </html>
+
