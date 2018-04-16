@@ -20,49 +20,8 @@
 
 window.onload=function(){
 	
-	var p=document.querySelectorAll('.list1 p');  /*获取到所有的p*/
-	
-	for(var i=0;i<p.length;i++){
-		
-		p[i].parentNode.onoff=true;
-		p[i].onclick=function(){
-			if(this.parentNode.onoff){
-				this.nextElementSibling.style.display='block';  /*通过点击的p来找到兄弟节点ul 让他显示出来*/
-				this.children[0].innerHTML='-';    /* 通过点击的p来找到他的子节点 i*/
-				list(this);
-			}
-			else {
-				this.nextElementSibling.style.display='none';  /*通过点击的p来找到兄弟节点ul 让他显示出来*/
-				this.children[0].innerHTML='+';    /* 通过点击的p来找到他的子节点 i*/
-			}
-			
-			this.parentNode.onoff=!this.parentNode.onoff;
-		}
-	}
-
-
-	function list(This){
-		console.log(This)  /*获取当前的this*/
-		var ul=This.parentNode.parentNode;  /*获取当前点击p元素的父级的父级 ul  通过ul找到所有li 嘻嘻*/
-		console.log(ul)
-		var ali=ul.children;
-		console.log(ali)
-
-		for(var i=0;i<ali.length;i++){
-
-			console.log(ali[i].children[1])
-			var oul=ali[i].children[1];
-			if(oul){
-				oul.style.display='none';
-				ali[i].onoff=true;
-				ali[i].children[0].children[0].innerHTML='+';
-
-			}
-			// console.log(ali[i]children[0].children[0])
-		}
-		This.nextElementSibling.style.display='block';
-		This.onoff=false;
-		This.children[0].innerHTML='-';
-
+	var json={'测试':'000','1':'aaa','2':'bbb','3':'ccc'};
+	for(var arr in json){
+		alert(json[arr])
 	}
 }
