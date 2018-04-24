@@ -1,0 +1,56 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2018-04-23 10:58:42
+ * @version $Id$
+ */
+body,ul,li,p,span{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style-type: none;
+}
+img{
+	border: none;
+	vertical-align: top;
+}
+.clear:after,.clear:before{
+	content: "";
+	display: table;
+}
+.clear:after{
+	clear: both;
+}
+body{
+	background-color: #666666;
+}
+/* reset end */
+
+/* wrap start */
+.wrap{
+	width: 1200px;
+	height: 700px;
+	margin: 120px auto;
+	background: url('../img/bg.png') no-repeat;
+	position: relative;
+}
+.rotate{
+	position: absolute;
+	left: 554px;
+	top: 438px;
+}
+.rotate li{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 400px;
+	height: 100px;
+	background: url('../img/logo.png') no-repeat 285px 65px;
+	border-radius: 6px;
+	transition: 1s;
+	transform-origin: 38px 48px;
+
+}
+/* wrap end */

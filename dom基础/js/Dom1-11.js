@@ -36,7 +36,7 @@
 		封装一个碰撞检测的函数,传入两个值一个是拖动的对象,一个是被碰撞的对象
 		首先获取到被碰撞对象的dom元素的getBoundingClientRect() 的top right bottom left 四个方向的值
 		移动的时候获取到拖动对象dom元素的getBoundingClientRect() 的top right bottom left 四个方向的值 加上自身的宽度或者是高度
-		判断 当拖动对象 left+W> 碰撞对象的 left 返回true
+		判断 当拖动对象 right< 碰撞对象的 left 返回false 其他三个方向依次类推
 
  */
 window.onload=function(){
@@ -117,21 +117,34 @@ window.onload=function(){
 		for(var i=0;i<Li.length;i++){
 		Li[i].onmousedown=function(ev){
 			if (!this.children[0].checked) {return}
+			tanc.innerHTML='';
+			var inputlen=CheckLi();  /*被选中input1的长度*/
 			tanc.style.left=ev.clientX+4+'px';
 			tanc.style.top=ev.clientY+'px';
+			console.log(CheckLi())
+			tanc.innerHTML+='选中'+inputlen.length+'封邮件';
 			tanc.style.display='block';
 
-
+			var Onoff=false;
 			/*清楚默认行为*/
 			ev.preventDefault();
 			document.onmousemove=function(ev){
 				tanc.style.left=ev.clientX+4+'px';
 				tanc.style.top=ev.clientY+'px';
-				console.log(tanc.getBoundingClientRect().left)
+			
+			if(collision(tanc,delplace)){
+			Onoff=true;
+
+			}
 			}
 			document.onmouseup=function(){
 				tanc.style.display='none';
 				document.onmousemove=document.onmouseup=null;
+				if(Onoff){
+					alert(1)
+					DelLI();
+
+				}
 			}
 
 		}
@@ -142,13 +155,17 @@ window.onload=function(){
 	/*封装全部选中的li dom元素*/
 
 	function CheckLi(){
-		var Li=List.querySelectorAll('li');
+
+		var btn=List.querySelectorAll('input');
+		
 		var arr=[];
-	
-		for(var i=0;i<Li.length;i++){
-			if(Li[i].children[0].checked){
-				console.log(Li[i])
-				arr.push(Li[i])
+		
+		for(var k=0;k<btn.length;k++){
+
+			if(btn[k].checked){
+
+				console.log(btn[k])
+				arr.push(btn[k].parentNode)
 			}
 		}
 		return arr;
@@ -179,8 +196,20 @@ window.onload=function(){
 		}
 	}
 
+	var delplace=document.querySelector('.left .list2 .del');  /*获取不动参照物dom*/
+
+	
 	/*封装碰撞检测*/
 	function collision(drag,static){
-		var static
+
+		var noplace=static.getBoundingClientRect();   /*获取不动元素的位置*/
+		var dragPlace=drag.getBoundingClientRect();   /*获取拖动元素的位置*/
+	
+		if(dragPlace.right<noplace.left||dragPlace.bottom<noplace.top||dragPlace.left>noplace.right||dragPlace.top>noplace.bottom){
+			return false;
+		}
+		else {
+			return true;
+		}
 	}
 }
