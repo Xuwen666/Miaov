@@ -22,7 +22,7 @@
 	jq当中所有的方法都是封装起来的,所以必须通过调用,或者传参的形式去获取
 	
 - jq与js能共存但是不能混用
-  ```javascript
+```javascript
   $(function(){
     	$('#div').click(function(){
     	$(this).html() ;  //纯jq写法 可行
@@ -64,10 +64,10 @@ $('div').attr('id','666')  //设置div对象 id的行间属性
 ```
 - filter()
 	对一组元素进行筛选 ,在js当中filter是数组下面的方法:筛选出对应的值
-
-	```javascript
+```javascript
 $(div).flter('.box').css('background','red')    //只会筛选出来div class带box的
 ```
+
 - not()
 	与filter的作用是相反的
 
