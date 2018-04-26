@@ -87,7 +87,7 @@ $(div).flter('.box').css('background','red')    //只会筛选出来div class带
 
 - index()
 	类似我们原生当中的索引
-	```javascript
+```javascript
 $(function(){
 	alert($('#h2').index())    //索引就是当前元素在所有兄弟节点中的位置
 })
