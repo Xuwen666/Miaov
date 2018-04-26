@@ -1,4 +1,3 @@
-
 # jq介绍
   Jq的底层就是Js
 #   选择元素
@@ -61,35 +60,35 @@
 #   JQ常用方法
 - attr()
 	attr()相当于是js当中的getAttribute(key) 获取元素的行间属性
-	
+
 	```javascript
 $('div').attr('id')  //获取div对象 id的行间属性
 $('div').attr('id','666')  //设置div对象 id的行间属性
 ```
 - filter()
 	对一组元素进行筛选 ,在js当中filter是数组下面的方法:筛选出对应的值
-	
+
 	```javascript
 $(div).flter('.box').css('background','red')    //只会筛选出来div class带box的
 ```
 - not()
 	与filter的作用是相反的
-	
+
 - has()
 	作用是用于包含
-	
+
 - next()
   next()跟我们原生js当中的nextElementSibling是一样,原生没有括号哦
-  
+
 - prev()
   prev()跟我们原生js当中的prevElementSibling是一样,原生没有括号哦
-  
+
 - find()
    他是查找的意思
 
 - eq()
 	类似我们原生当中的下标
-	
+
 - index()
 	类似我们原生当中的索引
 	```javascript
