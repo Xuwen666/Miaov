@@ -35,8 +35,7 @@
 - 链式操作
 
 - 取值赋值合体
-
-   ```javascript
+```javascript
  $('#div').html();   //取值
     $('#div').html('俺是赋值嘻嘻');   //赋值
 
