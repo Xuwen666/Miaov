@@ -58,8 +58,7 @@
 #   JQ常用方法
 - attr()
 	attr()相当于是js当中的getAttribute(key) 获取元素的行间属性
-
-	```javascript
+```javascript
 $('div').attr('id')  //获取div对象 id的行间属性
 $('div').attr('id','666')  //设置div对象 id的行间属性
 ```
