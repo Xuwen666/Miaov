@@ -12,9 +12,7 @@
 		$('li:eq(2)').css('background','red')  获取到的是li下面的第二个
 		js当中想做隔行换色,需要判断取模,而jq却可以很简单的找到奇 偶数行
 		$('li:even').css('background','red')  获取到的是li下面的even 偶数行
-        	<ul>
-        		<li>1</li>
-        	</ul>
+   
 
 
 #   JQ写法
