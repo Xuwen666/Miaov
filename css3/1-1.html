@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标绘制方框</title>
+	<style>
+		#box{
+			width: 800px;
+			height: 550px;
+			background: #ffcccc;
+			position: absolute;
+			top: 20px;
+			left: 100px;
+		}
+		.block{
+			position: absolute;
+			border: 1px solid #000;
+		}
+	
+	
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	// 每次鼠标down下  都会创造一个div    div的高度和宽度由鼠标move的距离决定
+	var box = document.getElementById('box');
+	box.onmousedown = function(ev){
+		var ev = ev||event;   //  获取鼠标down下位置
+		var X = ev.clientX;   
+		var Y = ev.clientY;  
+		var oDiv = document.createElement('div');
+		box.appendChild(oDiv);
+oDiv.style.left=ev.clientX-box.offsetLeft+'px';
+			oDiv.style.top=ev.clientY-box.offsetTop+'px';
+		box.onmousemove = function(ev){
+			var ev = ev||event;
+			// 只能在box里面绘制div
+			
+			oDiv.className = 'block';
+			oDiv.style.width = Math.abs(ev.clientX-X) +'px';
+			oDiv.style.height = Math.abs(ev.clientY-Y) +'px';
+			
+
+			
+		}
+		document.onmouseup = function(){
+			box.onmousemove = document.onmouseup = null;
+		}
+		return false;
+	}
+
+
+
+
+
+</script>
+</html>
