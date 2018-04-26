@@ -58,3 +58,58 @@
 
 
  */
+
+window.onload = function() {
+	
+	var oDiv = document.getElementById('div1');
+	
+	oDiv.onmousedown = function(ev) {
+		
+		var ev = ev || event;
+		
+		var disW = this.offsetWidth;
+		var disX = ev.clientX;
+		var disL = this.offsetLeft;
+		
+		var b = '';
+		
+		if ( disX > disL + disW - 10 ) {
+			//alert( 'right' );
+			b = 'right';
+		}
+		if ( disX < disL + 10 ) {
+			//alert( 'left' );
+			b = 'left';
+		}
+		
+		document.onmousemove = function(ev) {
+			
+			var ev = ev || event;
+			
+			switch( b ) {
+				
+				case 'left':
+					oDiv.style.width = disW - ( ev.clientX - disX ) + 'px';
+					oDiv.style.left = disL + ( ev.clientX - disX ) + 'px';
+					break;
+					
+				case 'right':
+					oDiv.style.width = disW + ( ev.clientX - disX ) + 'px';
+					break;
+				
+			}
+			
+		}
+		
+		document.onmouseup = function() {
+			document.onmousemove = document.onmouseup = null;
+		}
+		
+		return false;
+		
+	}
+	
+}
+
+	
+
