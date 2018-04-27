@@ -179,3 +179,16 @@ $(function(){
  语法:
  
  `$(selector).fadeIn(speed,callback);`
+可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。.
+可选的 callback 参数是 fading 完成后所执行的函数名称。
+- ##### fadeOut()
+用于淡出可见元素。
+- ##### fadeToggle()
+这个效果如果要在原生js中实现的话就必须给判断
+		jQuery fadeToggle() 方法可以在 fadeIn() 与 fadeOut() 方法之间进行切换。
+		如果元素已淡出，则 fadeToggle() 会向元素添加淡入效果。
+		如果元素已淡入，则 fadeToggle() 会向元素添加淡出效果。
+语法:
+`$(selector).fadeToggle(speed,callback);`
+可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。
+可选的 callback 参数是 fading 完成后所执行的函数名称
