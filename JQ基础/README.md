@@ -151,24 +151,29 @@ $(function(){
 	当用户滚动指定的元素时，会发生 scroll 事件
 
 #   JQ效果
-#### -  hide() show()
-	这个方法在原生来做的话style.display=block/none,
-	如果想要有过度的话还需要在css中添加transition
+#### -  显示隐藏
+- ##### hide() show()
+		这个方法在原生来做的话style.display=block/none,
+		如果想要有过度的话还需要在css中添加transition
 语法:
-    
-
-    $(selector).hide(speed,callback);
-    $(selector).show(speed,callback);
-	
+  `  $(selector).hide(speed,callback);`
+   ` $(selector).show(speed,callback);`
 可选的 speed 参数规定隐藏/显示的速度，可以取以下值："slow"、"fast" 或毫秒。
 可选的 callback 参数是隐藏或显示完成后所执行的函数名称。
 
-#### - toggle()
-	通过 jQuery，您可以使用 toggle() 方法来切换 hide() 和 show() 方法
-	这个方法可以在js原生当中来实现的话就必须要设置一个开关来进行判断了
+- ##### toggle()
+		通过 jQuery，您可以使用 toggle() 方法来切换 hide() 和 show() 方法
+		这个方法可以在js原生当中来实现的话就必须要设置一个开关来进行判断了
 语法:
-
-
-    $(selector).toggle(speed,callback);
+  `  $(selector).toggle(speed,callback);`
 可选的 speed 参数规定隐藏/显示的速度，可以取以下值："slow"、"fast" 或毫秒。
 可选的 callback 参数是隐藏或显示完成后所执行的函数名称。
+		$(selector) 选中的元素的个数为 n 个，则 callback 函数会执行 n 次。
+		对于这里，当 callback 函数加上括号时，函数立即执行，只会调用一次， 
+		如果不加括号，元素显示或隐藏后调用函数，才会调用多次
+
+#### -  淡入淡出
+- #####  fadeIn()
+ 用于淡入已隐藏的元素
+ 语法:
+ `$(selector).fadeIn(speed,callback);`
