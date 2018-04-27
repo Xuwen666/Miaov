@@ -340,7 +340,7 @@ $("button").click(function(){
 #### -  添加元素
 - ##### append() 方法
  append() 方法在被选元素的结尾插入内容（仍然该元素的内部）这个方法类似于js原生当中的appendchild()方法一样
-- ##### append() 方法
+- ##### prepend() 方法
  prepend() 方法在被选元素的开头插入内容
 - ##### 添加若干新元素
 在上面的例子中，我们只在被选元素的开头/结尾插入文本/HTML。
@@ -385,3 +385,108 @@ $("p").remove(".italic");
 ```
 
 #### -  获取并设置 CSS 类
+- #####  addClass()
+不同的元素添加 class 属性。当然，在添加类时，您也可以选取多个元素
+当然在选取多个元素的时候用空格隔开即可
+这个方法类似于js原生当中className,只不过他有toggleClass这种便捷的方法
+```javascript
+$("button").click(function(){
+  $("h1,h2,p").addClass("blue");
+  $("div").addClass("important");
+});
+```
+您也可以在 addClass() 方法中规定多个类：
+```javascript
+$("button").click(function(){
+  $("body div:first").addClass("important blue");
+});
+```
+- #####   removeClass()
+如何在不同的元素中删除指定的 class 属性：
+```javascript
+$("button").click(function(){
+  $("h1,h2,p").removeClass("blue");
+});
+```
+- #####   toggleClass()
+ jQuery toggleClass() 方法。该方法对被选元素进行添加/删除类的切换操作
+```javascript
+$("button").click(function(){
+  $("h1,h2,p").toggleClass("blue");
+});
+```
+
+#### -  css() 方法
+- #####   返回 CSS 属性
+如需返回指定的 CSS 属性的值，请使用如下语法：
+```javascript
+css("propertyname");
+```
+```javascript
+$("p").css("background-color");
+```
+- #####   设置 CSS 属性
+如需设置指定的 CSS 属性，请使用如下语法：
+```javascript
+css("propertyname","value");
+```
+```javascript
+$("p").css("background-color","yellow");
+```
+
+- #####   设置多个 CSS 属性
+如需设置多个 CSS 属性，请使用如下语法：
+```javascript
+css({"propertyname":"value","propertyname":"value",...});
+```
+```javascript
+$("p").css({"background-color":"yellow","font-size":"200%"});
+```
+
+#### -  尺寸
+- #####   width() 和 height() 方法
+width() 方法设置或返回元素的宽度（不包括内边距、边框或外边距）。
+height() 方法设置或返回元素的高度（不包括内边距、边框或外边距）。
+- #####   innerWidth() 和 innerHeight() 方法
+innerWidth() 方法返回元素的宽度（包括内边距）。
+innerHeight() 方法返回元素的高度（包括内边距）。
+- #####   outerWidth() 和 outerHeight() 方法
+outerWidth() 方法返回元素的宽度（包括内边距和边框）。
+outerHeight() 方法返回元素的高度（包括内边距和边框）。
+outerHeight(true) 如果传入参数true的话返回元素的高度(包括内边距和外边距和边框)
+
+#### -  Jq遍历
+jq遍历其实都是原生js DOM的操作
+#### -  祖先
+- #####   parent()
+parent() 方法返回被选元素的直接父元素。
+该方法只会向上一级对 DOM 树进行遍历。
+- #####   parents()
+parents() 方法返回被选元素的所有祖先元素，它一路向上直到文档的根元素 (<html>)
+您也可以使用可选参数来过滤对祖先元素的搜索。
+```javascript
+$(document).ready(function(){
+  $("span").parents("ul");
+});
+```
+- #####   parentsUntil()
+parentsUntil() 方法返回介于两个给定元素之间的所有祖先元素。
+```javascript
+$(document).ready(function(){
+  $("span").parentsUntil("div");
+});
+```
+
+返回span于div之间的元素
+#### -  后代
+- #####   children()
+children() 方法返回被选元素的所有直接子元素。
+该方法只会向下一级对 DOM 树进行遍历
+您也可以使用可选参数来过滤对子元素的搜索。
+```javascript
+$(document).ready(function(){
+  $("div").children("p.1");
+});
+```
+- #####   find()
+find() 方法返回被选元素的后代元素，一路向下直到最后一个后代。
