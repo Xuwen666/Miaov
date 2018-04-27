@@ -177,9 +177,10 @@ $(function(){
 - #####  fadeIn()
  用于淡入已隐藏的元素
  语法:
- 
- `$(selector).fadeIn(speed,callback);`
-可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。.
+```javascript
+$(selector).fadeIn(speed,callback);
+```
+可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。
 可选的 callback 参数是 fading 完成后所执行的函数名称。
 - ##### fadeOut()
 用于淡出可见元素。
@@ -189,7 +190,9 @@ $(function(){
 		如果元素已淡出，则 fadeToggle() 会向元素添加淡入效果。
 		如果元素已淡入，则 fadeToggle() 会向元素添加淡出效果。
 语法:
-`$(selector).fadeToggle(speed,callback);`
+```javascript
+$(selector).fadeToggle(speed,callback);
+```
 可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。
 可选的 callback 参数是 fading 完成后所执行的函数名称
 - ##### fadeTo()
