@@ -110,49 +110,51 @@ $(function(){
 	
 - ##### mouseenter()
 		当鼠标指针穿过（进入）被选元素时，会发生 mouseenter 事件。
-		注意：与 mouseover 事件不同，mouseenter 事件只有在鼠标指针进入被选元素时被触			发，mouseover 事件在鼠标指针进入任意子元素时也会被触发。
+		注意：与 mouseover 事件不同，mouseenter 事件只有在鼠标指针进入被选元素时被触发，mouseover 事件在鼠标指针进入任意子元素时也会被触发。
 	
 - ##### mouseleave()
 		当鼠标指针离开被选元素时，会发生 mouseleave 事件。
-		注意：与 mouseout 事件不同，mouseleave 事件只有在鼠标指针离开被选元素时被触发，		mouseout 事件在鼠标指针离开任意子元素时也会被触发。
+		注意：与 mouseout 事件不同，mouseleave 事件只有在鼠标指针离开被选元素时被触发，mouseout 事件在鼠标指针离开任意子元素时也会被触发。
 	
 	
 #### - 键盘事件
 	
 - ##### keypress()
-	keypress 事件与 keydown 事件类似。当按钮被按下时发生该事件。
-然而，keypress 事件不会触发所有的键（比如 ALT、CTRL、SHIFT、ESC）
+		keypress 事件与 keydown 事件类似。当按钮被按下时发生该事件。
+		然而，keypress 事件不会触发所有的键（比如 ALT、CTRL、SHIFT、ESC）
 
-	-** keydown()**
+- #####  keydown()
 	
-	- **keyup()**
+- #####keyup()
 	
-- 	表单事件()
+#### - 键盘事件
 	
-	-** submit()**
-	当提交表单时，会发生 submit 事件。
-	该事件只适用于 form 元素
+- #####keyup()
+		当提交表单时，会发生 submit 事件。
+		该事件只适用于 form 元素
 
-	-** change()**
-	当元素的值改变时发生 change 事件（仅适用于表单字段）
-	注意：当用于 select 元素时，change 事件会在选择某个选项时发生。当用于 text field 或 text area 时，change 事件会在元素失去焦点时发生。
-	-** focus()**
-	当元素获得焦点时
+- #####change()
+		当元素的值改变时发生 change 事件（仅适用于表单字段）
+		注意：当用于 select 元素时，change 事件会在选择某个选项时发生。
+		当用于 text field 或 text area 时，change 事件会在元素失去焦点时发生。
+- #####focus()
+		当元素获得焦点时
 	
-	-** blur()**
-	当元素失去焦点时
+- ##### blur()
+		当元素失去焦点时
 	
-- 	文档/窗口事件()
+#### -文档/窗口事件()
 	
-	- 	**resize()**
+- #####resize()
 	当调整浏览器窗口大小时，发生 resize 事件。
 
- 	- ####scroll()
+- #####scroll()
 	当用户滚动指定的元素时，会发生 scroll 事件
 
 #   JQ效果
 #### - hide() show() 
-这个方法在原生来做的话style.display=block/none,如果想要有过度的话还需要在css中添加transition
+		这个方法在原生来做的话style.display=block/none,
+		如果想要有过度的话还需要在css中添加transition
 语法:
 
 
@@ -163,8 +165,8 @@ $(function(){
 可选的 callback 参数是隐藏或显示完成后所执行的函数名称。
 
 #### - toggle()
-通过 jQuery，您可以使用 toggle() 方法来切换 hide() 和 show() 方法
-这个方法可以在js原生当中来实现的话就必须要设置一个开关来进行判断了
+		通过 jQuery，您可以使用 toggle() 方法来切换 hide() 和 show() 方法
+		这个方法可以在js原生当中来实现的话就必须要设置一个开关来进行判断了
 语法:
 
 
