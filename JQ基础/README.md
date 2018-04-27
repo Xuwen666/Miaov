@@ -295,8 +295,6 @@ $("#p1").css("color","red")
 ```
 #### -  捕获
 - ##### text()、html() 以及 val()
-
-
-    text() - 设置或返回所选元素的文本内容   相当于是js当中的innerTEXT
-    html() - 设置或返回所选元素的内容（包括 HTML 标记） 相当于是js当中的innerHTML
-    val() - 设置或返回表单字段的值  相当于是js当中的value
+		text() - 设置或返回所选元素的文本内容   相当于是js当中的innerTEXT
+		html() - 设置或返回所选元素的内容（包括 HTML 标记） 相当于是js当中的innerHTML
+		val() - 设置或返回表单字段的值  相当于是js当中的value
