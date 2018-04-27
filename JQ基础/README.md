@@ -124,11 +124,10 @@ $(function(){
 		然而，keypress 事件不会触发所有的键（比如 ALT、CTRL、SHIFT、ESC）
 
 - #####  keydown()
-	
+
 - #####keyup()
 	
 #### - 键盘事件
-	
 - #####keyup()
 		当提交表单时，会发生 submit 事件。
 		该事件只适用于 form 元素
