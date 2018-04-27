@@ -127,16 +127,16 @@ $(function(){
 
 - #####keyup()
 	
-#### - 键盘事件
-- #####keyup()
+#### - 表单事件
+- ##### keyup()
 		当提交表单时，会发生 submit 事件。
 		该事件只适用于 form 元素
 
-- #####change()
+- ##### change()
 		当元素的值改变时发生 change 事件（仅适用于表单字段）
 		注意：当用于 select 元素时，change 事件会在选择某个选项时发生。
 		当用于 text field 或 text area 时，change 事件会在元素失去焦点时发生。
-- #####focus()
+- ##### focus()
 		当元素获得焦点时
 
 - ##### blur()
@@ -151,15 +151,15 @@ $(function(){
 	当用户滚动指定的元素时，会发生 scroll 事件
 
 #   JQ效果
-#### - hide() show() 
+#### -  hide() show() 
 		这个方法在原生来做的话style.display=block/none,
 		如果想要有过度的话还需要在css中添加transition
 语法:
-
+    
 
     $(selector).hide(speed,callback);
     $(selector).show(speed,callback);
-
+	
 可选的 speed 参数规定隐藏/显示的速度，可以取以下值："slow"、"fast" 或毫秒。
 可选的 callback 参数是隐藏或显示完成后所执行的函数名称。
 
