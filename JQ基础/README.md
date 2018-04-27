@@ -151,9 +151,9 @@ $(function(){
 	当用户滚动指定的元素时，会发生 scroll 事件
 
 #   JQ效果
-#### -  hide() show() 
-		这个方法在原生来做的话style.display=block/none,
-		如果想要有过度的话还需要在css中添加transition
+#### -  hide() show()
+	这个方法在原生来做的话style.display=block/none,
+	如果想要有过度的话还需要在css中添加transition
 语法:
     
 
@@ -164,8 +164,8 @@ $(function(){
 可选的 callback 参数是隐藏或显示完成后所执行的函数名称。
 
 #### - toggle()
-		通过 jQuery，您可以使用 toggle() 方法来切换 hide() 和 show() 方法
-		这个方法可以在js原生当中来实现的话就必须要设置一个开关来进行判断了
+	通过 jQuery，您可以使用 toggle() 方法来切换 hide() 和 show() 方法
+	这个方法可以在js原生当中来实现的话就必须要设置一个开关来进行判断了
 语法:
 
 
