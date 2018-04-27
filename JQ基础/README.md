@@ -105,21 +105,21 @@ $(function(){
 		当单击元素时，发生 click 事件。
 
 - ##### dblclick()
-	当双击元素时，触发 dblclick 事件。
-	提示：dblclick 事件也会产生 click 事件。如果这两个事件都被应用于同一个元素，则会产生问题
+		当双击元素时，触发 dblclick 事件。
+		提示：dblclick 事件也会产生 click 事件。如果这两个事件都被应用于同一个元素，则会产生问题
 	
-	- **mouseenter()**
-	当鼠标指针穿过（进入）被选元素时，会发生 mouseenter 事件。
-	注意：与 mouseover 事件不同，mouseenter 事件只有在鼠标指针进入被选元素时被触发，mouseover 事件在鼠标指针进入任意子元素时也会被触发。
+- ##### mouseenter()
+		当鼠标指针穿过（进入）被选元素时，会发生 mouseenter 事件。
+		注意：与 mouseover 事件不同，mouseenter 事件只有在鼠标指针进入被选元素时被触发，mouseover 事件在鼠标指针进入任意子元素时也会被触发。
 	
-	- **mouseleave()**
-	当鼠标指针离开被选元素时，会发生 mouseleave 事件。
-	注意：与 mouseout 事件不同，mouseleave 事件只有在鼠标指针离开被选元素时被触发，mouseout 事件在鼠标指针离开任意子元素时也会被触发。参见页面底部演示实例
+- ##### mouseleave()
+		当鼠标指针离开被选元素时，会发生 mouseleave 事件。
+		注意：与 mouseout 事件不同，mouseleave 事件只有在鼠标指针离开被选元素时被触发，mouseout 事件在鼠标指针离开任意子元素时也会被触发。参见页面底部演示实例
 	
 	
-- 键盘事件()
+#### - 键盘事件
 	
-	- mouseleave()
+- ##### keypress()
 	keypress 事件与 keydown 事件类似。当按钮被按下时发生该事件。
 然而，keypress 事件不会触发所有的键（比如 ALT、CTRL、SHIFT、ESC）
 
