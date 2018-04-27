@@ -281,3 +281,20 @@ $(selector).stop(stopAll,goToEnd);
 		即仅停止活动的动画，允许任何排入队列的动画向后执行。
 		可选的 goToEnd 参数规定是否立即完成当前动画。默认是 false。默认成
 		因此，默认地，stop() 会清除在被选元素上指定的当前动画。
+
+#### -  停止动画
+Callback 函数在当前动画 100% 完成之后执行。这个东西就相当于是js原生当中transitionend过渡完成要执行的回调函数一样一样
+
+#### -  链
+提示：当进行链接时，代码行会变得很长。不过，jQuery 语法不是很严格；您可以按照希望的格式来写，包含换行和缩进。
+如下书写也可以很好地运行
+```javascript
+$("#p1").css("color","red")
+  .slideUp(2000)
+  .slideDown(2000);
+```
+#### -  捕获
+- ##### text()、html() 以及 val()
+text() - 设置或返回所选元素的文本内容   相当于是js当中的innerTEXT
+html() - 设置或返回所选元素的内容（包括 HTML 标记） 相当于是js当中的innerHTML
+val() - 设置或返回表单字段的值  相当于是js当中的value
