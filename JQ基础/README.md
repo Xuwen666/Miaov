@@ -293,6 +293,7 @@ $("#p1").css("color","red")
   .slideUp(2000)
   .slideDown(2000);
 ```
+#  HTML
 #### -  捕获
 - ##### text()、html() 以及 val()
 		text() - 设置或返回所选元素的文本内容   相当于是js当中的innerTEXT
@@ -455,7 +456,7 @@ outerWidth() 方法返回元素的宽度（包括内边距和边框）。
 outerHeight() 方法返回元素的高度（包括内边距和边框）。
 outerHeight(true) 如果传入参数true的话返回元素的高度(包括内边距和外边距和边框)
 
-#### -  Jq遍历
+#  遍历
 jq遍历其实都是原生js DOM的操作
 #### -  祖先
 - #####   parent()
