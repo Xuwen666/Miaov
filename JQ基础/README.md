@@ -192,3 +192,12 @@ $(function(){
 `$(selector).fadeToggle(speed,callback);`
 可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。
 可选的 callback 参数是 fading 完成后所执行的函数名称
+- ##### fadeTo()
+ fadeTo() 方法允许渐变为给定的不透明度（值介于 0 与 1 之间）
+语法:
+```javascript
+$(selector).fadeTo(speed,opacity,callback);
+```
+必需的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。
+fadeTo() 方法中必需的 opacity 参数将淡入淡出效果设置为给定的不透明度（值介于 0 与 1 之间）。
+可选的 callback 参数是该函数完成后所执行的函数名称
