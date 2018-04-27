@@ -298,3 +298,22 @@ $("#p1").css("color","red")
 		text() - 设置或返回所选元素的文本内容   相当于是js当中的innerTEXT
 		html() - 设置或返回所选元素的内容（包括 HTML 标记） 相当于是js当中的innerHTML
 		val() - 设置或返回表单字段的值  相当于是js当中的value
+
+#### -  设置
+- ##### text()回调函数
+		上面的三个 jQuery 方法：text()、html() 以及 val()，同样拥有回调函数。
+		回调函数有两个参数：被选元素列表中当前元素的下标，以及原始（旧的）值。
+		然后以函数新值返回您希望使用的字符串。
+
+
+    $("#btn1").click(function(){
+        $("#test1").text(function(i,origText){
+            return "旧文本: " + origText + " 新文本: Hello world! (index: " + i + ")"; 
+        });
+    });
+     
+    $("#btn2").click(function(){
+        $("#test2").html(function(i,origText){
+            return "旧 html: " + origText + " 新 html: Hello <b>world!</b> (index: " + i + ")"; 
+        });
+    });
