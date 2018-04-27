@@ -223,3 +223,61 @@ $(selector).slideDown(speed,callback);
 		如果元素向上滑动，则 slideToggle() 可向下滑动它们。
 
 #### -  动画
+- #####  animate()方法
+用于创建自定义动画。
+语法：
+```javascript
+$(selector).animate({params},speed,callback);
+```
+```javascript
+必需的 params 参数定义形成动画的 CSS 属性。
+可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。
+可选的 callback 参数是动画完成后所执行的函数名称。
+```
+- #####  animate() - 使用相对值
+```javascript
+$(document).ready(function(){
+  $("button").click(function(){
+    $("div").animate({
+      left:'250px',
+      opacity:'0.5',
+      height:'150px',
+      width:'150px'
+    });
+  });
+});
+```
+- #####  animate() - 使用预定义的值
+```javascript
+$(document).ready(function(){
+  $("button").click(function(){
+    $("div").animate({
+      height:'toggle'
+    });
+  });
+});
+```
+- #####  animate() - 使用队列功能
+默认地，jQuery 提供针对动画的队列功能。
+这意味着如果您在彼此之后编写多个 animate() 调用，jQuery 会创建包含这些方法调用的"内部"队列。然后逐一运行这些 animate 调用。
+```javascript
+$("button").click(function(){
+  var div=$("div");
+  div.animate({height:'300px',opacity:'0.4'},"slow");
+  div.animate({width:'300px',opacity:'0.8'},"slow");
+  div.animate({height:'100px',opacity:'0.4'},"slow");
+  div.animate({width:'100px',opacity:'0.8'},"slow");
+});
+```
+#### -  停止动画
+- ##### stop()
+用于停止动画或效果，在它们完成之前。
+stop() 方法适用于所有 jQuery 效果函数，包括滑动、淡入淡出和自定义动画。
+语法:
+```javascript
+$(selector).stop(stopAll,goToEnd);
+```
+		可选的 stopAll 参数规定是否应该清除动画队列。默认是 false，
+		即仅停止活动的动画，允许任何排入队列的动画向后执行。
+		可选的 goToEnd 参数规定是否立即完成当前动画。默认是 false。默认成
+		因此，默认地，stop() 会清除在被选元素上指定的当前动画。
