@@ -304,21 +304,84 @@ $("#p1").css("color","red")
 		上面的三个 jQuery 方法：text()、html() 以及 val()，同样拥有回调函数。
 		回调函数有两个参数：被选元素列表中当前元素的下标，以及原始（旧的）值。
 		然后以函数新值返回您希望使用的字符串。
-
-
-    <script>
-    $(document).ready(function(){
-      $("#btn1").click(function(){
-        $("#test1").text(function(i,origText){
-          return "旧文本: " + origText + " 新文本: Hello world! (index: " + i + ")"; 
-        });
-      });
-    
-      $("#btn2").click(function(){
-        $("#test2").html(function(i,origText){
-          return "旧 html: " + origText + " 新 html: Hello <b>world!</b> (index: " + i + ")"; 
-        });
-      });
-    
+```javascript
+ $("#btn1").click(function(){
+    $("#test1").text(function(i,origText){
+      return "旧文本: " + origText + " 新文本: Hello world! (index: " + i + ")"; 
     });
-    </script>
+  });
+
+  $("#btn2").click(function(){
+    $("#test2").html(function(i,origText){
+      return "旧 html: " + origText + " 新 html: Hello <b>world!</b> (index: " + i + ")"; 
+    });
+  });
+```
+- ##### attr
+attr() 方法也允许您同时设置多个属性。
+```javascript
+$("button").click(function(){
+    $("#runoob").attr({
+        "href" : "http://www.runoob.com/jquery",
+        "title" : "jQuery 教程"
+    });
+});
+```
+- ##### attr() 的回调函数
+jQuery 方法 attr()，也提供回调函数。回调函数有两个参数：被选元素列表中当前元素的下标，以及原始（旧的）值。然后以函数新值返回您希望使用的字符串
+```javascript
+$("button").click(function(){
+  $("#runoob").attr("href", function(i,origValue){
+    return origValue + "/jquery"; 
+  });
+});
+```
+
+#### -  添加元素
+- ##### append() 方法
+ append() 方法在被选元素的结尾插入内容（仍然该元素的内部）这个方法类似于js原生当中的appendchild()方法一样
+- ##### append() 方法
+ prepend() 方法在被选元素的开头插入内容
+- ##### 添加若干新元素
+在上面的例子中，我们只在被选元素的开头/结尾插入文本/HTML。
+不过，append() 和 prepend() 方法能够通过参数接收无限数量的新元素。可以通过 jQuery 来生成文本/HTML（就像上面的例子那样），或者通过 JavaScript 代码和 DOM 元素。
+在下面的例子中，我们创建若干个新元素。这些元素可以通过 text/HTML、jQuery 或者 JavaScript/DOM 来创建。然后我们通过 append() 方法把这些新元素追加到文本中（对 prepend() 同样有效）：
+```javascript
+function appendText(){
+	var txt1="<p>文本。1</p>";              // 使用 HTML 标签创建文本
+	var txt2=$("<p></p>").text("文本2。");  // 使用 jQuery 创建文本
+	var txt3=document.createElement("p");
+	txt3.innerHTML="文本。";               // 使用 DOM 创建文本 text with DOM
+	$("body").append(txt1,txt2,txt3);        // 追加新元素
+}
+```
+- ##### after() 和 before()
+jQuery after() 方法在被选元素之后插入内容。
+jQuery before() 方法在被选元素之前插入内容
+- #####添加若干新元素
+after() 和 before() 方法能够通过参数接收无限数量的新元素。可以通过 text/HTML、jQuery 或者 JavaScript/DOM 来创建新元素。
+在下面的例子中，我们创建若干新元素。这些元素可以通过 text/HTML、jQuery 或者 JavaScript/DOM 来创建。然后我们通过 after() 方法把这些新元素插到文本中（对 before() 同样有效）
+```javascript
+function afterText()
+{
+    var txt1="<b>I </b>";                    // 使用 HTML 创建元素
+    var txt2=$("<i></i>").text("love ");     // 使用 jQuery 创建元素
+    var txt3=document.createElement("big");  // 使用 DOM 创建元素
+    txt3.innerHTML="jQuery!";
+    $("img").after(txt1,txt2,txt3);          // 在图片后添加文本
+}
+```
+
+#### -  删除元素
+- ##### remove()
+remove() 方法删除被选元素及其子元素。
+- ##### empty()
+empty() 方法删除被选元素的子元素
+- ##### 过滤被删除的元素
+jQuery remove() 方法也可接受一个参数，允许您对被删元素进行过滤。
+该参数可以是任何 jQuery 选择器的语法。
+```javascript
+$("p").remove(".italic");
+```
+
+#### -  获取并设置 CSS 类
