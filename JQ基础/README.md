@@ -306,14 +306,19 @@ $("#p1").css("color","red")
 		然后以函数新值返回您希望使用的字符串。
 
 
-    $("#btn1").click(function(){
+    <script>
+    $(document).ready(function(){
+      $("#btn1").click(function(){
         $("#test1").text(function(i,origText){
-            return "旧文本: " + origText + " 新文本: Hello world! (index: " + i + ")"; 
+          return "旧文本: " + origText + " 新文本: Hello world! (index: " + i + ")"; 
         });
-    });
-     
-    $("#btn2").click(function(){
+      });
+    
+      $("#btn2").click(function(){
         $("#test2").html(function(i,origText){
-            return "旧 html: " + origText + " 新 html: Hello <b>world!</b> (index: " + i + ")"; 
+          return "旧 html: " + origText + " 新 html: Hello <b>world!</b> (index: " + i + ")"; 
         });
+      });
+    
     });
+    </script>
