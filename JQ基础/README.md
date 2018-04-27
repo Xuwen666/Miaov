@@ -204,3 +204,22 @@ $(selector).fadeTo(speed,opacity,callback);
 必需的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。
 fadeTo() 方法中必需的 opacity 参数将淡入淡出效果设置为给定的不透明度（值介于 0 与 1 之间）。
 可选的 callback 参数是该函数完成后所执行的函数名称
+
+#### -  滑动
+- #####  slideDown()
+用于向下滑动元素
+语法:
+```javascript
+$(selector).slideDown(speed,callback);
+```
+可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。
+可选的 callback 参数是滑动完成后所执行的函数名称。
+
+- #####  slideUp()
+用于向上滑动元素
+- #####  slideToggle()
+		jQuery slideToggle() 方法可以在 slideDown() 与 slideUp() 方法之间进行切换。
+		如果元素向下滑动，则 slideToggle() 可向上滑动它们。
+		如果元素向上滑动，则 slideToggle() 可向下滑动它们。
+
+#### -  动画
