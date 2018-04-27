@@ -138,16 +138,16 @@ $(function(){
 		当用于 text field 或 text area 时，change 事件会在元素失去焦点时发生。
 - #####focus()
 		当元素获得焦点时
-	
+
 - ##### blur()
 		当元素失去焦点时
 
 #### -文档/窗口事件()
 
-- #####resize()
+- ##### resize()
 	当调整浏览器窗口大小时，发生 resize 事件。
 
-- #####scroll()
+- ##### scroll()
 	当用户滚动指定的元素时，会发生 scroll 事件
 
 #   JQ效果
