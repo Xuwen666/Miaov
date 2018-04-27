@@ -156,6 +156,7 @@ $(function(){
 		这个方法在原生来做的话style.display=block/none,
 		如果想要有过度的话还需要在css中添加transition
 语法:
+
   `  $(selector).hide(speed,callback);`
    ` $(selector).show(speed,callback);`
 可选的 speed 参数规定隐藏/显示的速度，可以取以下值："slow"、"fast" 或毫秒。
@@ -176,4 +177,5 @@ $(function(){
 - #####  fadeIn()
  用于淡入已隐藏的元素
  语法:
+ 
  `$(selector).fadeIn(speed,callback);`
