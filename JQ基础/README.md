@@ -110,11 +110,11 @@ $(function(){
 	
 - ##### mouseenter()
 		当鼠标指针穿过（进入）被选元素时，会发生 mouseenter 事件。
-		注意：与 mouseover 事件不同，mouseenter 事件只有在鼠标指针进入被选元素时被触发，mouseover 事件在鼠标指针进入任意子元素时也会被触发。
+		注意：与 mouseover 事件不同，mouseenter 事件只有在鼠标指针进入被选元素时被触			发，mouseover 事件在鼠标指针进入任意子元素时也会被触发。
 	
 - ##### mouseleave()
 		当鼠标指针离开被选元素时，会发生 mouseleave 事件。
-		注意：与 mouseout 事件不同，mouseleave 事件只有在鼠标指针离开被选元素时被触发，mouseout 事件在鼠标指针离开任意子元素时也会被触发。参见页面底部演示实例
+		注意：与 mouseout 事件不同，mouseleave 事件只有在鼠标指针离开被选元素时被触发，		mouseout 事件在鼠标指针离开任意子元素时也会被触发。
 	
 	
 #### - 键盘事件
