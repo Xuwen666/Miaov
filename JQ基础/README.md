@@ -105,6 +105,30 @@ $(function(){
 jq转换成原生js
 #### - $()
 等DOM加载完就可以执行了,性能好
+#### - closest()
+获取最近的指定的祖先节点(包括当前元素自己),必须写筛选参数,只能找到一个元素
+#### - wrap()
+包装
+```javascript
+$('li').wrap('<div>')
+给每个li外面包上一个div
+
+```
+#### - wrapAll()
+整体包装
+```javascript
+$('li').wrapAll('<div>')
+所有li都包进一个div当中
+```
+#### - wrapInner()
+内部包装
+#### - unwrap()
+删除父级:不包括body
+#### - add()
+#### - finish()
+动画停止到指定的目标点
+#### - delay()
+动画延迟
 #   JQ事件
 #### - 鼠标事件()
 - ##### click()
