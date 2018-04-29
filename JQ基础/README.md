@@ -129,10 +129,144 @@ $('li').wrapAll('<div>')
 动画停止到指定的目标点
 #### - delay()
 动画延迟
+#### - deleagte()
+事件委托的方法
+```javascript
+$('li').on('click',function(){
+		this.style.background='red';
+	})
+
+	$('ul').delegate('li','click',function(){
+		this.style.background='red';
+	})
+	// 把事件加到ul身上,当我点击li的时候li本身是没有事件的，而是通过利用冒泡的原理
+```
+事件委托的好处就是
+1省略的循环操作你只需要给ul加一个点击事件就行
+2对后续添加的内容直接就拥有了事件操作
+#### - undeleagte()
+阻止事件委托
+#### - trigger()
+主动触发
+```javascript
+$('#div1').on('click',function(){alert(1)})
+	$('#div1').trigger('click')
+```
+### 以上所有方法只能给jq对象用 $().css()  $().val()
+### 以下所有方法不仅可以给jq用还可以给js原生使用  $.XXX()  $.xxx() 我们叫他为工具方法
+#### - tpye() 注意在原生当中可使用
+判断数据类型与原生typeof不一样的地方就是它可以判断出更多的类型,比如json以及数组用原生typeof来判断都是obj,而jq不是
+#### - trim() 注意在原生当中可使用
+去掉前后空格,这个在获取到数据的时候有用
+#### - inArray() 注意在原生当中可使用
+类似于原生当中indexOf 找到字符串相应的位置,只不过他是作用于数组的,原生js当中也有indexof这方法
+```javascript
+var arr=['a','b','c']
+	$.innArray('b',arr)
+```
+#### - prosy() 注意在原生当中可使用
+改变this执行类似于原生当中call()
+```javascript
+function show(n1,n2){
+		alert(n1);
+		alert(n2);
+		alert(this)
+	}
+	$.proxy(show,document,3,4)()
+	// 第一个参数为调用函数
+	// 第二个参数为指向
+```
+#### - noConflict() 注意在原生当中可使用
+防止与$命名冲突的
+```javascript
+var miaov=$.noConflict();
+	// miaov代替了$
+	miaov(function(){
+		miaov('body').css('background','red')
+	})
+```
+#### - parseJson() 注意在原生当中可使用
+与原生Json-parse相同
+利用这个$,paeseJson我们就可以对ajax或者其他传入来的数据进行解析成真正的json
+#### - makeArray() 注意在原生当中可使用
+Array.from()
+是ES6中的方法，用于将类数组转换为数组。
+```javascript
+var arr = Array.from(arguments);
+```
+只要有length属性的对象，都可以应用此方法转换成数组。
+
+#   AJAX 他也是工具方法
+```javascript
+$.ajax({
+		url:'xxx.php',  /*后台地址*/
+		data:'name=hello&age=20', /*发送到服务器端的数据*/
+		type:'POST', /*传输类型*/
+		success:function(data){
+			alert(data)
+			/*data就是请求成功返回的内容*/
+		}
+		/*请求成功返回的回调函数*/
+		error:function(){
+			alert(2)
+		}
+		/*请求失败*/
+	})
+```
+- ##### get()
+指定get()请求方式,ajax抽象出来的方法更加具体
+```javascript
+$.get('xxx.php',{},function(){
+
+	})
+	/*第一个参数后台地址
+	 第二个参数传输的数据
+	 第三个参数请求成功返回的数据
+	*/
+```
+- ##### post()
+指定post()请求方式,ajax抽象出来的方法更加具体
+```javascript
+$.post('xxx.php',{},function(){
+
+	})
+	/*第一个参数后台地址
+	 第二个参数传输的数据
+	 第三个参数请求成功返回的数据
+	*/
+```
+- ##### getJSON()
+请求json类型的数据,同样他也支持jsonp的形式,就是跨域的形式
+```javascript
+$.getJSON('xxx.php',{},function(data){
+		alert(data)
+	})
+	/*
+		jsonp这种形式他需要有一个函数名字才能知道那个函数调用,在jq当中非常容易的就是'xxx.php?callback=show'相当于是这个地址会自动生成一个 show({}),jq当中还提供了写一个问号'xxx.php?callback=?'
+		问号的作用就是不用关心这个名字了,他会自动生成一个名字,这个名字是随机的,这样更方便一些
+	 
+	*/
+```
+#   扩展插件
+#### - extend()
+扩展工具方法下的形式
+```javascript
+$.extend({
+		left:function(str){
+
+		},
+		aaa:function(){
+			
+		}
+	})
+```
+#### - fn.extend()
+扩展对象方法下的形式
 #   JQ事件
 #### - 鼠标事件()
 - ##### click()
-		当单击元素时，发生 click 事件。
+		当单击元素时，发生 click 事件。 
+
 
 - ##### dblclick()
 		当双击元素时，触发 dblclick 事件。
