@@ -152,8 +152,8 @@ $('li').on('click',function(){
 $('#div1').on('click',function(){alert(1)})
 	$('#div1').trigger('click')
 ```
-### 以上所有方法只能给jq对象用 $().css()  $().val()
-### 以下所有方法不仅可以给jq用还可以给js原生使用  $.XXX()  $.xxx() 我们叫他为工具方法
+以上所有方法只能给jq对象用 $().css()  $().val()
+以下所有方法不仅可以给jq用还可以给js原生使用  $.XXX()  $.xxx() 我们叫他为工具方法
 #### - tpye() 注意在原生当中可使用
 判断数据类型与原生typeof不一样的地方就是它可以判断出更多的类型,比如json以及数组用原生typeof来判断都是obj,而jq不是
 #### - trim() 注意在原生当中可使用
