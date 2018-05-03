@@ -152,6 +152,37 @@ $('li').on('click',function(){
 $('#div1').on('click',function(){alert(1)})
 	$('#div1').trigger('click')
 ```
+#### - extend()
+对象继承操作,深拷贝操作
+```javascript
+var a = {
+		name : "hello"
+	};
+	
+	var b = {};
+	
+	$.extend( b , a , {age:20} );
+	
+	console.log(b);
+	
+	b.name = 'hi';
+	console.log(b)
+	alert( a.name );
+```
+深拷贝
+```javascript
+var a = {
+		name : {age:20}
+	};
+	
+	var b = {};
+	
+	$.extend( true , b , a );  //默认是浅拷贝的  , true代表深拷贝
+	
+	b.name.age = 30;
+	
+	alert( a.name.age );
+```
 以上所有方法只能给jq对象用 $().css()  $().val()
 以下所有方法不仅可以给jq用还可以给js原生使用  $.XXX()  $.xxx() 我们叫他为工具方法
 #### - tpye() 注意在原生当中可使用
