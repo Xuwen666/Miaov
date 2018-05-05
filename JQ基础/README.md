@@ -244,7 +244,7 @@ $.ajax({
 		/*请求失败*/
 	})
 ```
-- ##### get()
+#### - get()
 指定get()请求方式,ajax抽象出来的方法更加具体
 ```javascript
 $.get('xxx.php',{},function(){
@@ -255,7 +255,7 @@ $.get('xxx.php',{},function(){
 	 第三个参数请求成功返回的数据
 	*/
 ```
-- ##### post()
+#### - post()
 指定post()请求方式,ajax抽象出来的方法更加具体
 ```javascript
 $.post('xxx.php',{},function(){
@@ -266,7 +266,7 @@ $.post('xxx.php',{},function(){
 	 第三个参数请求成功返回的数据
 	*/
 ```
-- ##### getJSON()
+#### - getJSON()
 请求json类型的数据,同样他也支持jsonp的形式,就是跨域的形式
 ```javascript
 $.getJSON('xxx.php',{},function(data){
@@ -277,6 +277,48 @@ $.getJSON('xxx.php',{},function(data){
 		问号的作用就是不用关心这个名字了,他会自动生成一个名字,这个名字是随机的,这样更方便一些
 	 
 	*/
+```
+#### - param()
+转化为提交给后台的格式字符串类型
+```javascript
+var obj={‘name’:'hello','age':'20'}；
+OBJ=$.param(obj);
+consloe.log(obj)
+//转成的格式 'name=hello%age=20'
+```
+这个方法用的并不多,因为在前面我们讲过在ajax操作的过程当中
+```javascript
+$.ajax(
+data:name=hello'&'age=20  //可以写这种格式
+data:{"name":"hello","age":"20"}  //这种格式也可以,他会自动帮你转
+)
+```
+#### -  serialize()
+格式化表单数据针对form表单,他不是工具方法
+```javascript
+var a=$('form').serialize();
+consloe.log(a)
+//输出结果 a=1&b=2&c=3
+```
+```html
+<form>
+	<input type="text" name="a" value="1">
+	<input type="text" name="b" value="2">
+	<input type="text" name="c" value="3">
+</form>
+```
+
+```javascript
+var input=document.querySelectorAll('input');
+		var arr=[];
+		for(var i=0;i<input.length;i++){
+			console.log(input[i].name)
+			arr.push(input[i].name+'='+input[i].value);
+		}
+
+		 /*有个坑join不会改变原始数组*/
+		var ddd=arr.join("&");  
+		console.log(ddd)
 ```
 #   扩展插件
 #### - extend()
