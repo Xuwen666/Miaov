@@ -268,6 +268,7 @@ $.post('xxx.php',{},function(){
 ```
 #### - getJSON()
 请求json类型的数据,同样他也支持jsonp的形式,就是跨域的形式
+返回的格式就是json
 ```javascript
 $.getJSON('xxx.php',{},function(data){
 		alert(data)
@@ -294,7 +295,7 @@ data:{"name":"hello","age":"20"}  //这种格式也可以,他会自动帮你转
 )
 ```
 #### -  serialize()
-格式化表单数据针对form表单,他不是工具方法
+格式化表单数据针对form表单,他不是工具方法 ,注意这种方法只能是form当中的name和value的组合才能使用
 ```javascript
 var a=$('form').serialize();
 consloe.log(a)
@@ -319,6 +320,33 @@ var input=document.querySelectorAll('input');
 		 /*有个坑join不会改变原始数组*/
 		var ddd=arr.join("&");  
 		console.log(ddd)
+```
+#### -  serializeArray()
+转换成json的格式
+```javascript
+//返回的格式
+[{name:"a",value:"1"},{name:"b",value:"2"},{name:"c",value:"3"}]
+```
+#### - load()
+相当于是往页面当中去添加数据,一般load头部尾部的页面
+```javascript
+$('#div1.box').load(
+//第一个参数地址  .box代表筛选出.box类的
+'data.html'，
+//第二个参数是回调函数
+	function(){
+	
+}
+)
+```
+```html
+<div id="div1"></div>
+```
+#### - getScript()
+动态的去请求js文件  工具方法 按需加载js,可以让js按需去加载,用就加载不用就不加载
+```javascript
+$('#div').click($.getScript('data.js'))
+//只有点击的时候才加载
 ```
 #   扩展插件
 #### - extend()
