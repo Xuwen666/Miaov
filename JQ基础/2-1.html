@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	ul{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		width: 250px;
+		border: 1px solid black;
+		height: 200px;
+	}
+	.left,.right,input{
+		float: left;
+	}
+	input{
+		margin-top: 80px;
+		margin-right: 4px;
+	}
+	input:nth-of-type(1){
+		margin-left: 4px;
+	}
+	li.active{
+		background: red;
+	}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var btn=document.querySelectorAll('input');
+		var leftLi=document.querySelectorAll('.left li');
+		var rightLi=document.querySelectorAll('.right li');
+		/*封装左右li添加背景色*/
+		function Listli(li){
+			for(var i=0;i<li.length;i++){
+			li[i].onoff=true;
+			console.log(li[i].onoff)
+			li[i].onclick=function(){
+				console.log(this.onoff)
+				if(this.onoff){
+					this.className='active';
+				}else if (this.onoff==false) {
+					this.className='';
+				}
+				this.onoff=!this.onoff;
+			}
+			}
+		}
+		Listli(leftLi);
+		Listli(rightLi);
+		/*封装被选中的li*/
+		function moveLi(Li){
+			var li=document.querySelectorAll(Li);
+			var arr=[];
+			for(var i=0;i<li.length;i++){
+				if(li[i].className){
+					arr.push(li[i]);
+				}
+			}
+			return arr;
+		}
+		var left=document.querySelector('.left');
+		var right=document.querySelector('.right');
+		btn[0].onclick=function(){
+			var Bli=moveLi('.left li');
+			for(var i=0;i<Bli.length;i++){
+				Bli[i].className='';
+				right.appendChild(Bli[i])
+			}
+		}
+		btn[1].onclick=function(){
+			var Bli=moveLi('.right li');
+			for(var i=0;i<Bli.length;i++){
+				Bli[i].className='';
+				left.appendChild(Bli[i])
+			}
+		}
+	}
+</script>
+</head>
+<body>
+    <ul class="left">
+    	<li>111</li>
+    	<li>222</li>
+    	<li>333</li>
+    	<li>444</li>
+    	<li>555</li>
+    </ul>
+    <input type="button" name="" value=">">
+    <input type="button" value="<">
+    <ul class="right">
+    	<li>aaa</li>
+    	<li>bbb</li>
+    	<li>ccc</li>
+    	<li>ddd</li>
+    	<li>eee</li>
+    </ul>
+</body>
+</html>
