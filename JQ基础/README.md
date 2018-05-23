@@ -149,6 +149,7 @@ $('li').on('click',function(){
 阻止事件委托
 #### - trigger()
 主动触发
+方法触发被选元素的指定事件类型。
 ```javascript
 $('#div1').on('click',function(){alert(1)})
 	$('#div1').trigger('click')
