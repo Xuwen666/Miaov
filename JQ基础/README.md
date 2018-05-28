@@ -235,6 +235,7 @@ $.ajax({
 		url:'xxx.php',  /*后台地址*/
 		data:'name=hello&age=20', /*发送到服务器端的数据*/
 		type:'POST', /*传输类型*/
+		dataType:"json",
 		success:function(data){
 			alert(data)
 			/*data就是请求成功返回的内容*/
